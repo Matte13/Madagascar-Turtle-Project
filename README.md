@@ -12,17 +12,17 @@ node ./bin/www
 
 CREDENZIALI UTENTI AMMINISTRATORI 
 
-email: andreaferrari@gmail.com
-
-password: Andrea0000
+  email: andreaferrari@gmail.com
+  
+  password: Andrea0000
 
 CREDENZIALI UTENTI AVVISTATORI 
 
-email: matteoschirinzi@hotmail.it
-
-password: Matteo0000
-
-email: danielenicoletti@gmail.com
-
-password: Daniele0000
+  email: matteoschirinzi@hotmail.it
+  
+  password: Matteo0000
+  
+  email: danielenicoletti@gmail.com
+  
+  password: Daniele0000
 
