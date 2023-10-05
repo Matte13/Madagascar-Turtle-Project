@@ -1,0 +1,86 @@
+<!-- Section Conferma Avvistamenti -->
+<section class="container-fluid" id="conferma-avvistamento">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 lang" key="SIGHTING-CONFIRM">Conferma Avvistamenti</h1>
+    </div>
+
+    <!--Table-->
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" >Id</th>
+            <th scope="col" class="lang" key="TAB-CODE">Codice</th>
+            <th scope="col" class="lang" key="TAB-NAME">Nome</th>
+            <th scope="col" class="lang" key="TAB-LAST-DATE">Data Avvistamento</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (let turtle of unconfirmed) { %>
+              <tr class='clickable-row' id=<%= turtle.id %>>
+                  <td>
+                      <%= turtle.id %>
+                  </td>
+                  <td>
+                      <%= turtle.code %>
+                  </td>
+                  <td>
+                      <%= turtle.name %>
+                  </td>
+                  <td>
+                    <%= moment(turtle.date) %>
+                  </td>
+              </tr> 
+            <% } %>
+          </tbody>
+    </table>
+
+    <br>
+
+    <div class="container-fluid box-tart" id="box-tart">
+        <br>
+        <div id="box-img" class="d-flex flex-row">
+        </div>
+        <br>
+        <div class="d-flex flex-column">
+            <div class="p-2">
+                <span class="header-name lang" key="GENDER2">Sesso:</span>
+                <span id="box-sex">Maschio</span>
+            </div>
+            <div class="p-2">
+                <span class="header-name lang" key="PLACE-SIGHTING2">Luogo Avvistamento: </span>
+                <span id="box-luogo">Nosy Tanikely</span>
+            </div>
+            <div class="p-2">
+                <span class="header-name lang" key="SPECIES5">Specie: </span>
+                <span id="box-specie">Tartaruga imbricata - Eretmochelys imbricata</span>
+            </div>
+            <div class="p-2">
+                <span class="header-name lang" key="TAB-DATE2">Data dell'avvistamento: </span>
+                <span id="box-data">11/05/2021</span>
+            </div>
+            <div class="p-2">
+                <span class="header-name lang" key="SIGNS2">Segni particolari:</span>
+                <span id="box-desc">eventuale descrizione di segni particolari come cicatrici, malformazioni, mutilazioni,…</span>
+            </div>
+            <div id="input" class="p-2">
+                <span class="header-name lang" key="INSERT-TURTLE-CODE">Inserisci il codice tartaruga</span>
+                <input type="text" minlength="4" maxlength="8" class="form-control w-25" id="codice-tartaruga">
+            </div>
+        </div>
+        <div class="d-flex flex-row">
+            <div class="p-2 mb-2">
+                <button type="button" class="btn btn-primary btn-sm bg-success border-success lang" onclick="confermaAvvistamento()" data-toggle="modal" data-target="#exampleModalCenter" key="SIGHTING-CONFIRM">Conferma Avvistamento</button>
+            </div>
+            <div class="p-2 mb-2">
+                <button type="button" class="btn btn-primary btn-sm border-danger bg-danger lang" onclick="rifiutaAvvistamento()" data-toggle="modal" data-target="#exampleModalCenter" key="SIGHTING-CANCEL">Rifiuta Avvistamento</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <br>
+
+</section>
+<!-- End Section Conferma Avvistamenti -->

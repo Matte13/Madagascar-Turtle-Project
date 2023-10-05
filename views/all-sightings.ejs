@@ -1,0 +1,53 @@
+<!-- Section Tutti Gli Avvistamenti -->
+<section class="container-fluid" id="all-sightings">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 lang" key="ALL-SIGHTING">Tutti Gli Avvistamenti</h1>
+    </div>
+
+    <p class="lang" key="ALL-SIGHTING2">Di seguito troverai una tabella contente tutte le tartarughe attualmente presenti nel nostro database.</p>
+
+    <!--Table-->
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="lang" key="TAB-CODE">Id</th>
+            <th scope="col" class="lang" key="TAB-CODE-TART">Codice Tartaruga</th>
+            <th scope="col" class="lang" key="TAB-NAME">Nome</th>
+            <th scope="col" class="lang" key="TAB-LAST-DATE">Data Avvistamento</th>
+            <th scope="col" class="lang" key="TAB-ADOPTEDBY">Avvistata da</th>
+          </tr>
+        </thead>
+        <% let i = 0;  %> 
+        <tbody>
+            <%for (let sighting of sightings)  { %>
+              <tr class='clickable-row2' row=<%= i %> turtleid =  <%= sighting.id %>>
+                  <td >
+                      <%= sighting.id %>
+                  </td>
+                  <td>
+                      <%= sighting.code %>
+                  </td>
+                  <td>
+                      <%= sighting.name %>
+                  </td>
+                  <td>
+                    <%= moment(sighting.date) %>
+                  </td>
+                  <td>
+                    <%= sighting.sighted %>
+                  </td>
+              </tr> 
+            <% i++ } %>
+          </tbody>
+    </table>
+
+
+
+    <!--Turtle Card-->
+    <%- include('turtle-card') -%>
+
+
+</section>
+<!-- End Section Tutti Gli Avvistamenti  -->

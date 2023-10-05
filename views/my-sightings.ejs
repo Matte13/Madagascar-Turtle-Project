@@ -1,0 +1,49 @@
+<!-- Section My Sightings -->
+<section class="container-fluid" id="tartarughe">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 lang" key="MY-SIGHTING">I Miei Avvistamenti</h1>
+    </div>
+
+    <p class="lang" key="MY-SIGHTING2">Di seguito troverai una tabella contente le tartarughe che hai avvistato. </p>
+
+    <!--Table-->
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="lang" key="TAB-CODE">Id</th>
+            <th scope="col" class="lang" key="TAB-CODE-TART">Codice Tartaruga</th>
+            <th scope="col" class="lang" key="TAB-NAME">Nome</th>
+            <th scope="col" class="lang" key="TAB-LAST-DATE">Data Avvistamento</th>
+            <th scope="col" class="lang" key="TAB-PLACE">Luogo Avvistamento</th>
+          </tr>
+        </thead>
+        <% let i = 0;  %> 
+        <tbody>
+          <%for (let mysighting of mysightings)  { %>
+            <tr class='clickable-row2' row=<%= i %> turtleid =  <%= mysighting.id %>>
+                <td >
+                    <%= mysighting.id %>
+                </td>
+                <td>
+                    <%= mysighting.code %>
+                </td>
+                <td>
+                    <%= mysighting.name %>
+                </td>
+                <td>
+                  <%= moment(mysighting.date) %>
+                </td>
+                <td>
+                  <%= mysighting.place %>
+              </td>
+            </tr> 
+          <% i++ } %>
+        </tbody>
+    </table>
+
+    <!--Turtle Card-->
+    <%- include('turtle-card') -%>
+
+</section>

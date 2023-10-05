@@ -1,0 +1,112 @@
+<!--Section Profilo-->
+<section class="container-fluid" id="section-profilo">
+    <div class="container">
+        <div class="main-body">
+        
+              <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card mb-3">
+                    <div id="user" userid=<%= user.id %>  class="card-body">
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Name</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= user.name %> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Surname</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= user.surname %>  
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-3">
+                          <h6 class="mb-0">Email</h6>
+                        </div>
+                        <div class="col-sm-9 text-secondary">
+                          <%= user.email %> 
+                        </div>
+                      </div>
+                      <hr>
+                      <div class="row">
+                        <div class="col-sm-12">
+                            <input type="button" class="btn btn-primary px-4" value="Edit" id="btn-edit">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-8" id="edit-profilo">
+                <div class="card">
+                    <div class="card-body" id="edit-form">
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" name="name" >
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Surname</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" name="surname" >
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" name="email" >
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Password</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" name="password" >
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-sm-3">
+                              <h6 class="mb-0">Password</h6>
+                          </div>
+                          <div class="col-sm-9 text-secondary">
+                              <input type="text" class="form-control" name="re_password" >
+                          </div>
+                      </div>
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9 text-secondary">
+                                <input id="edit-profilo-btn"  onclick="check(this)" type="submit" name="submit" class="btn btn-primary px-4" value="Save Changes">
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+<!--End Section Profilo-->

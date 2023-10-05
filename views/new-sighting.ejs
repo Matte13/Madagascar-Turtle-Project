@@ -1,0 +1,130 @@
+<!-- Section New Sighting -->
+<section class="container-fluid" id="avvistamento">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800 lang" key="NEW-SIGHTING">Nuovo Avvistamento</h1>
+    </div>
+
+    <span  class="lang" key="NEW-SIGHTING2">Benvenuto nella sezione dedicata all'inserimento di un nuovo avvistamento!</span>
+    <br>
+    <span  class="lang" key="NEW-SIGHTING3">Se non l’hai ancora fatto, consulta la sezione </span>
+    <span class="font-weight-bold lang" key="NEW-SIGHTING4">Guida all’Avvistamento</span>
+    <span class="lang" key="NEW-SIGHTING5">, per essere sicuro che le tue foto siano adatte al caricamento. </span>
+    <br>
+    <br>
+
+
+    <!-- Avvistamento -->
+
+    <div class="container-fluid" id="box-inserimento">
+        <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+        <form id="form-img" action="/avvistatore/" enctype="multipart/form-data" method="post" target="hiddenFrame">
+            <h2 class="lang" key="FOTO1">Carica qui le foto del tuo avvistamento</h2>
+            <!--Box Photo-->
+            <div class="row">
+              <div class="col-md-4">
+                <div class="box">
+                  <div class="js--image-preview"></div>
+                  <div class="upload-options">
+                    <label>
+                      <input id="inputImg" type="file" name="foto" accept='image/*' multiple class="image-upload"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input class="btn btn-primary btn-sm" type="submit" value="Upload" >
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-4">
+                <!--Sesso-->
+                <label class="control-label requiredField lang" key="GENDER" for="date">Scegli il sesso</label>
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="sesso">
+                        <option selected></option>
+                        <option class="lang" key="GENDER-M" value="Male">Maschio</option>
+                        <option class="lang" key="GENDER-F" value="Female">Femmina</option>
+                        <option class="lang" key="GENDER-X" value="Unknown">Ignoto</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!--Luogo-->
+                <label class="control-label requiredField lang" for="date"  key="PLACE-SIGHTING4">Scegli il luogo dell'avvistamento</label>
+                <div class="input-group mb-3 ">
+                    <select class="custom-select" id="luogo">
+                        <option selected></option>
+                        <option value="1">Nosy Sakatia</option>
+                        <option value="2">Nosy Be</option>
+                        <option value="3">Nosy Tanikely</option>
+                        <option value="4">Nosy Iranja</option>
+                        <option value="5">Nosy Komba</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <!--specie-->
+            <div class="col-md-4">
+                <label class="control-label requiredField lang" for="date" key="SPECIES">Seleziona la specie</label>
+                <div class="input-group mb-3 ">
+                    <select class="custom-select" id="specie">
+                    <option selected></option>
+                    <option value="3" class="lang" key="SPECIES2">Chelonia mydas</option>
+                    <option value="2" class="lang" key="SPECIES3">Eretmochelys imbricata </option>
+                    <option value="1" class="lang" key="SPECIES4">Caretta caretta</option>
+                    </select>
+                </div>
+            </div>
+            <!--Data-->
+            <div class="col-md-4">
+                <form class="form-horizontal" method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField lang" for="date" key="DATA">Inserisci la data dell'avvistamento</label>
+                        <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label lang" key="SIGNS">Segni particolari (cicatrici, malformazioni, mutilazioni,…)</label>
+            <textarea class="form-control" id="segni" name="segni" rows="3" placeholder=""></textarea>
+        </div>
+
+        <!-- Nome -->
+        <div class="mb-3 w-50">
+            <label for="exampleFormControlTextarea1" class="form-label lang" key="NAME">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" placeholder=""></input>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-sm lang" onclick="inserisciAvvistamento(this)" data-toggle="modal" key="INSERT-SIGHTING">Inserisci Avvistamento</button>
+    </div>
+    
+    <!-- Modal Ringraziamento-->
+    <div class="modal fade" id="modalRingraziamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title lang" id="exampleModalLongTitle" key="THANKS">Grazie!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <p class="lang" key="THANKS2">Grazie per averci dato una mano, l'Oceano ringrazia!</p>
+                <p class="lang" key="THANKS3">(Cliccando su ok verrai reindirizzato alla sezione "I Miei Avvistamenti")</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" class="close" data-dismiss="modal" id="confermaRingraz">OK</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</section>
